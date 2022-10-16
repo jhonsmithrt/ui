@@ -1,0 +1,61 @@
+{
+  "name": "jhonsmithrt/ui",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "livewire components",
+    "livewire ui",
+    "laravel components",
+    "blade components"
+  ],
+  "authors": [
+    {
+      "name": "jhon",
+      "email": "jhons4681@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0|^8.1",
+    "laravel/framework": "^8.83.25|^9.35.1",
+    "livewire/livewire": "^2.10.7"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.5",
+    "phpunit/phpunit": "^9.5",
+    "orchestra/testbench": "^6.0|^7.6",
+    "orchestra/testbench-dusk": "^6.0|^7.6",
+    "psy/psysh": "@stable",
+    "friendsofphp/php-cs-fixer": "^3.9",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-livewire": "^1.0",
+    "pestphp/pest-plugin-mock": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ui\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "./vendor/bin/dusk-updater detect --no-interaction"
+    ],
+    "test": "./vendor/bin/pest",
+    "test:ci": "CI=true ./vendor/bin/pest",
+    "phpcs": "./vendor/bin/php-cs-fixer fix"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ui\\Providers\\WireUiServiceProvider"
+      ],
+      "aliases": []
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
