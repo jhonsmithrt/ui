@@ -48,7 +48,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "ui\\Providers\\WireUiServiceProvider"
+        "ui\\Providers\\UiServiceProvider"
       ],
       "aliases": []
     }
